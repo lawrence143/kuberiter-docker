@@ -1,0 +1,10 @@
+FROM kuberiter/demo:tomcat-v1
+
+MAINTAINER Kuberiter <support@kuberiter.com>
+
+WORKDIR /opt/tomcat9/webapps
+RUN curl -O -L https://github.com/kuberiterdemo/kuberiter_docker/blob/master/sample.war
+
+EXPOSE 8080
+
+CMD ["/opt/tomcat9/bin/catalina.sh", "run"]
